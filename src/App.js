@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Header from './components/Header'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Shelves from './components/Shelves'
@@ -98,7 +97,9 @@ const BooksApp = () => {
             <div className="list-books">
             {console.log("SEARCH", searchBooks)}
 
-              <Header />
+              <div className="list-books-title">
+                <h1>MyReads</h1>
+              </div>
               <div className="list-books-content">
                 <Shelves books={books} updateBookShelf={updateBookShelf} />
               </div>
