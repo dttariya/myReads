@@ -6,9 +6,7 @@ const Book = ({ book, changeBookShelf }) => {
     return (
         <div className="book">
             <div className="book-top">
-                <div className="book-cover">
-                    <img className="book-cover" alt="Not Found" src={book.backgroundImage}/>
-                    </div> 
+                <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks && book.imageLinks.thumbnail})`}}></div>
                 <div className="book-shelf-changer">
                     <select defaultValue={book.shelf ? book.shelf : "none"} onChange={(e) => changeBookShelf(book, e.target.value)}>
                         <option value="move" disabled>Move to...</option>
