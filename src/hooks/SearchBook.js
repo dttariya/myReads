@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import * as BooksAPI from '..//BooksAPI'
+import * as BooksAPI from '../BooksAPI'
 
 
 
 
-export default function useQuery(query) {
+export default function searchBook(query) {
 
     const [searchBooks, setSearchBooks] = useState([]);
    

@@ -6,15 +6,15 @@ import './App.css'
 import Shelves from './components/Shelves'
 import Book from './components/Book'
 
-import useQuery from './hooks/useQuery'
+import searchBook from './hooks/SearchBook'
 
 const BooksApp = () => {
 
   const [books, setBooks] = useState([])
   const [mapOfIdToBooks, setMapOfIdToBooks] = useState(new Map());
 
-  const [query, setQuery] = useState("");
-  const [searchBooks] = useQuery(query);
+  const [entry, setSearchString] = useState("");
+  const [searchBooks] = searchBook(entry);
   const [mergedBooks, setMergedBooks] = useState([]);
 
 
@@ -78,7 +78,7 @@ const BooksApp = () => {
                   <button className="close-search">Close</button>
                 </Link>
                 <div className="search-books-input-wrapper">
-                  <input type="text" placeholder="Search by title, author, or ISBN" value={query} onChange={(e) => setQuery(e.target.value)} />
+                  <input type="text" placeholder="Search by title, author, or ISBN" value={entry} onChange={(e) => setSearchString(e.target.value)} />
                 </div>
               </div>
               <div className="search-books-results">
